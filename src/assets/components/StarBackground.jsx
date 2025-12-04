@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/immutability */
 import { useEffect, useState } from "react";
 
 // id, size, x, y, opacity, animationDuration
@@ -10,6 +11,8 @@ export const StarBackground = () => {
   useEffect(() => {
     generateStars();
     generateMeteors();
+   // generateStars();
+   // generateMeteors();
 
     const handleResize = () => {
       generateStars();
