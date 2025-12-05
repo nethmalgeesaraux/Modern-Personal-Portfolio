@@ -59,7 +59,7 @@ export const ContactSection = () => {
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    nethmalgeesara098@gamail.com
                   </a>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export const ContactSection = () => {
                     href="tel:+11234567890"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +1 (123) 456-7890
+                    +94 76 8692919 / +94 70 4201344
                   </a>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                    Sri Lanka,Anuradapuara,kahatagasadigiliaya
                   </a>
                 </div>
               </div>
@@ -93,13 +93,13 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/nethmal-geesara-473962351/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BICcaAYLTTdyXYi79Z2ZxvQ%3D%3D" target="_blank">
                   <Linkedin />
                 </a>
                 <a href="#" target="_blank">
                   <Twitter />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/nethmalg?igsh=MWw3dzhzbTNndTB1dg%3D%3D&utm_source=qr" target="_blank">
                   <Instagram />
                 </a>
                 <a href="#" target="_blank">
