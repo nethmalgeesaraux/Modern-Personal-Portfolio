@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Briefcase, Code, User, Smartphone } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -72,6 +72,21 @@ export const AboutSection = () => {
                 </div>
               </div>
             </div>
+            <div className="gradient-border p-6 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Smartphone className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">Mobile Development</h4>
+                  <p className="text-muted-foreground">
+                    Building cross‑platform mobile apps with Flutter and React
+                    Native for seamless user experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
