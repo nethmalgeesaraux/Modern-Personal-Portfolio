@@ -3,32 +3,62 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "Food Delivery Web",
+    description: "A responsive food delivery web application with real-time order",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
+    tags: ["React", "Node.js", "Vite", "MongoDB"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/nethmalgeesaraux/Food-Delivery-App",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Clouthing Store ",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "An e-commerce clothing store with product listings, shopping cart, and checkout.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["Html", "Tailwindcss", "Javascript"],
+    demoUrl: "https://tinyurl.com/BEETA-FASHION",
+    githubUrl: "https://github.com/nethmalgeesaraux/BEETA-FASHION",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Movie-App",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "A movie browsing app that fetches data from an external API and displays popular movies.",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["Html", "Api", "Javascript", "CSS"],
+    demoUrl: "https://nethmalgeesaraux.github.io/Movie-app-2/",
+    githubUrl: "https://github.com/nethmalgeesaraux/Movie-app-2",
+  },
+  {
+    id: 4,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    id: 5,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    id: 6,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
   },
 ];
 
