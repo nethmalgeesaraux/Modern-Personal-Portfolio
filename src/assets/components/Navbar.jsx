@@ -17,9 +17,10 @@ export const Navbar = () => {
   // Scroll progress bar
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
+      const docHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const progress = (window.scrollY / docHeight) * 100;
       setScrollProgress(progress);
     };
 
@@ -27,74 +28,89 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClick = () => setIsMenuOpen(false);
+
+    if (isMenuOpen) {
+      window.addEventListener("click", handleClick);
+    }
+    return () => window.removeEventListener("click", handleClick);
+  }, [isMenuOpen]);
+
   return (
     <>
       {/* Scroll Progress Bar */}
       <div
-        className="fixed top-0 left-0 h-[3px] bg-primary z-[999] transition-all duration-100"
+        className="fixed top-0 left-0 h-[3px] bg-primary z-[999] transition-[width] duration-200"
         style={{ width: `${scrollProgress}%` }}
-      ></div>
+      />
 
-      {/* Floating Glassmorphic Navbar */}
+      {/* Navbar */}
       <nav
         className={cn(
-          "fixed top-5 left-1/2 -translate-x-1/2 z-50",
-          "w-[90%] md:w-[70%] lg:w-[55%]",
-          "backdrop-blur-xl bg-white/10 dark:bg-black/20",
-          "border border-white/20 shadow-lg",
-          "rounded-2xl px-6 py-4 transition-all duration-300"
+          "fixed z-50 transition-all duration-500 animate-fade-in backdrop-blur-2xl",
+          "bg-white/10 dark:bg-black/20 shadow-[0_0_25px_rgba(255,255,255,0.15)] border-b border-white/20",
+          // Mobile: full width
+          "top-0 w-full px-4 py-4 rounded-none",
+          // Desktop: floating glass navbar
+          "md:top-5 md:left-1/2 md:-translate-x-1/2 md:w-[70%] lg:w-[55%]",
+          "md:rounded-2xl md:px-6 md:py-4"
         )}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between">
-          {/* Brand */}
+          {/* Logo */}
           <a
-            className="text-xl font-bold text-primary flex items-center"
             href="#hero"
+            className="text-xl font-bold text-primary animate-slide-down hover:drop-shadow-[0_0_8px_var(--primary)] transition-all"
           >
-            <span className="relative z-10 text-foreground">My Portfolio</span>
+            <span className="text-foreground">My Portfolio</span>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-10 animate-slide-down">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="relative text-foreground/80 hover:text-primary transition"
+                className="relative group text-foreground/80 hover:text-primary transition duration-300"
               >
                 {item.name}
-                {/* Underline Hover Animation */}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full hover:w-full"></span>
+
+                {/* Animated underline */}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 text-foreground z-50"
-            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-foreground transition hover:scale-110"
           >
-            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 z-40 flex flex-col items-center justify-center",
+            "backdrop-blur-xl bg-white/30 dark:bg-black/30", // <- soft glass color
+            "border-t border-white/20 shadow-xl",
             "transition-all duration-300 md:hidden",
             isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? "opacity-100 pointer-events-auto scale-100"
+              : "opacity-0 pointer-events-none scale-95"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col space-y-10 text-3xl animate-fade-in">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-foreground/90 hover:text-primary transition-all duration-300 hover:scale-110"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
