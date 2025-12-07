@@ -12,11 +12,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "Clouthing Store ",
+    title: "Clouthing Store",
     description:
-      "An e-commerce clothing store with product listings, shopping cart, and checkout.",
+      "An e-commerce clothing store with product listings and checkout.",
     image: "/projects/project2.png",
-    tags: ["Html", "Tailwindcss", "Javascript"],
+    tags: ["HTML", "Tailwindcss", "Javascript"],
     demoUrl: "https://tinyurl.com/BEETA-FASHION",
     githubUrl: "https://github.com/nethmalgeesaraux/BEETA-FASHION",
   },
@@ -24,109 +24,118 @@ const projects = [
     id: 3,
     title: "Movie-App",
     description:
-      "A movie browsing app that fetches data from an external API and displays popular movies.",
+      "A movie browsing app that fetches API data and displays trending films.",
     image: "/projects/project3.png",
-    tags: ["Html", "Api", "Javascript", "CSS"],
+    tags: ["HTML", "API", "Javascript", "CSS"],
     demoUrl: "https://nethmalgeesaraux.github.io/Movie-app-2/",
     githubUrl: "https://github.com/nethmalgeesaraux/Movie-app-2",
-  },
-  {
-    id: 4,
-    title: "",
-    description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: 5,
-    title: "",
-    description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: 6,
-    title: "",
-    description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
   },
 ];
 
 export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          {" "}
-          Featured <span className="text-primary"> Projects </span>
+      <div className="container mx-auto max-w-6xl">
+        
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
+          Featured <span className="text-primary">Projects</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          Some of my best projects — crafted with performance, UI/UX, 
+          and clean code in mind.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="
+                group relative px-1 pt-1 rounded-2xl 
+                shadow-lg backdrop-blur-xl bg-white/5 
+                border border-white/10 overflow-hidden 
+                transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2
+                animate-fade-in-up
+              "
+              style={{ animationDelay: `${key * 0.15}s` }}
             >
-              <div className="h-48 overflow-hidden">
+              
+              {/* Gradient Glow Border */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-transparent to-purple-500/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+
+              {/* Project Image */}
+              <div className="h-48 overflow-hidden rounded-xl shadow-inner">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="
+                    w-full h-full object-cover 
+                    transition-transform duration-700 
+                    group-hover:scale-110
+                  "
                 />
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+              {/* Content */}
+              <div className="p-6 relative z-10">
+                
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="
+                        px-3 py-1 text-xs font-medium rounded-full 
+                        bg-primary/10 text-primary 
+                        opacity-0 animate-fade-slide-up
+                      "
+                      style={{ animationDelay: `${0.3 + i * 0.1}s` }}
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                {/* Title */}
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
+
+                {/* Buttons */}
+                <div className="flex items-center justify-between">
+                  <div className="flex space-x-4">
                     <a
                       href={project.demoUrl}
                       target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      className="hover:text-primary transition-all"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={22} />
                     </a>
+
                     <a
                       href={project.githubUrl}
                       target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      className="hover:text-primary transition-all"
                     >
-                      <Github size={20} />
+                      <Github size={22} />
                     </a>
                   </div>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* Button */}
+       <div className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
@@ -135,6 +144,7 @@ export const ProjectsSection = () => {
             Check My Github <ArrowRight size={16} />
           </a>
         </div>
+
       </div>
     </section>
   );
