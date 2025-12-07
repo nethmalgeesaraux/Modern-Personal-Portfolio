@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { NotFound } from "./assets/pages/NotFound"
 import { Home } from "./assets/pages/Home"
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,7 +12,11 @@ function App() {
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
+
+    
   )
+
+  
 }
 
 export default App

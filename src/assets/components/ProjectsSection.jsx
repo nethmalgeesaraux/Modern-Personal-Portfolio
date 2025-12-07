@@ -30,6 +30,38 @@ const projects = [
     demoUrl: "https://nethmalgeesaraux.github.io/Movie-app-2/",
     githubUrl: "https://github.com/nethmalgeesaraux/Movie-app-2",
   },
+   {
+    id: 4,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    id: 5,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    id: 6,
+    title: "",
+    description:
+      "",
+    image: "",
+    tags: [],
+    demoUrl: "",
+    githubUrl: "",
+  },
+
+ 
 ];
 
 export const ProjectsSection = () => {

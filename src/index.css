@@ -236,10 +236,8 @@
 }
 
 
-/*project*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
 
 /* Fade-in Up */
 @keyframes fade-in-up {
@@ -272,3 +270,5 @@
 .animate-fade-slide-up {
   animation: fade-slide-up 0.5s ease forwards;
 }
+
+
