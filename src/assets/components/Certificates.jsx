@@ -11,11 +11,11 @@ const certificates = [
   },
   {
     id: 2,
-    title: "Frontend Web Development",
-    description: "HTML, CSS, Tailwind, JavaScript certification.",
-    image: "/certificates/cert2.png",
-    tags: ["Frontend", "UI/UX"],
-    demoUrl: "#",
+    title: "Spring Security Fundamentals",
+    description: "Certification from Udemy covering authentication, authorization, and secure application development with Spring Boot.",
+    image: "/Certificates/2.png",
+    tags: ["Spring", "Security", "Udemy", "Backend"],
+    demoUrl: "/Certificates/2.pdf",
   },
   {
     id: 3,
