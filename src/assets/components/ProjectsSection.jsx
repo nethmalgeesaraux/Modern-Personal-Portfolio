@@ -32,13 +32,13 @@ const projects = [
   },
    {
     id: 4,
-    title: "",
+    title: "Neumorphism Form Design",
     description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
+      "A moden simple neumorphic styled form design.",
+    image: "/projects/project4.png",
+    tags: ["HtML", "CSS", "JavaScript"],
+    demoUrl: "https://696cb608a827ab5eaaaf1349--resilient-kleicha-03d5fe.netlify.app/",
+    githubUrl: "https://github.com/nethmalgeesaraux/Neumorphism-Form-",
   },
   {
     id: 5,
