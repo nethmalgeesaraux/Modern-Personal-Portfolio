@@ -47,7 +47,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="https://docs.google.com/document/d/18qrHKdCaifQXWYCwXfSct46aePNbAO6KwJa8crmQbHg/edit?tab=t.pd7jt2yz4woz"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-all duration-300"
               >
                 Download CV
