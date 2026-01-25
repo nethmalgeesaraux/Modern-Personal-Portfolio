@@ -8,6 +8,7 @@ import { SkillsSection } from "../components/SkillsSection";
 import { StarBackground } from "../components/StarBackground";
 import { ThemeToggle } from "../components/ThemeToggle";
 import {Certificates}from"../components/Certificates"
+import Education from "../components/Education";
 
 export const Home = () => {
   return (
@@ -24,6 +25,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <Education/>
         <ProjectsSection/>
         <Certificates/>
         <ContactSection />

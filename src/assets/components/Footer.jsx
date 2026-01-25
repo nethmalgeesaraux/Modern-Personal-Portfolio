@@ -1,25 +1,10 @@
 import { ArrowUp, Sun, Moon, Facebook, Instagram, Github, Linkedin } from "lucide-react";
-import { useState } from "react";
 
 export const Footer = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+ 
 
   return (
     <footer className="relative mt-20 py-12 px-6 bg-gradient-to-br from-primary/10 via-background/20 to-primary/5 border-t border-white/10 flex flex-col items-center gap-12 rounded-3xl shadow-xl backdrop-blur-lg">
-
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="absolute right-6 top-6 p-2 rounded-full bg-white/10 hover:bg-white/25 transition-all duration-300 shadow-md"
-        aria-label="Toggle Theme"
-      >
-        {darkMode ? <Sun size={22} /> : <Moon size={22} />}
-      </button>
 
       {/* Navigation Menu */}
       <nav className="flex flex-wrap justify-center gap-6 text-sm sm:text-base text-muted-foreground font-medium">

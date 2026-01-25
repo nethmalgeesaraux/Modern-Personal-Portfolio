@@ -23,7 +23,7 @@ export const AboutSection = () => {
               className="text-muted-foreground animate-fade-slide-up"
               style={{ animationDelay: "0.25s" }}
             >
-              With over 2 years of experience in web development, I specialize
+              With over 1 years of experience in web development, I specialize
               in creating responsive, accessible, and performant web
               applications using modern technologies.
             </p>
