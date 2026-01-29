@@ -42,23 +42,23 @@ const projects = [
   },
   {
     id: 5,
-    title: "",
+    title: "Flight-Booking-Landing-Page",
     description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
+      "A flight booking landing page design.",
+    image: "/projects/project5.png",
+    tags: ["HtML", "CSS", "JavaScript"],
+    demoUrl: "https://nethmalgeesaraux.github.io/Flight-Booking-Landing-Page/",
+    githubUrl: "https://github.com/nethmalgeesaraux/Flight-Booking-Landing-Page",
   },
   {
     id: 6,
-    title: "",
+    title: "tourly-master",
     description:
-      "",
-    image: "",
-    tags: [],
-    demoUrl: "",
-    githubUrl: "",
+      "A travel agency landing page design.",
+    image: "/projects/project6.png",
+    tags: ["HtML", "CSS", "JavaScript"],
+    demoUrl: "https://nethmalgeesaraux.github.io/tourly-master/",
+    githubUrl: "https://github.com/nethmalgeesaraux/tourly-master",
   },
 
  
