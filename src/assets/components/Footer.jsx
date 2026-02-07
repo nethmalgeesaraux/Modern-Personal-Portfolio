@@ -1,49 +1,85 @@
-import { ArrowUp, Sun, Moon, Facebook, Instagram, Github, Linkedin } from "lucide-react";
+import {
+  ArrowUp,
+  Facebook,
+  Instagram,
+  Github,
+  Linkedin,
+} from "lucide-react";
 
 export const Footer = () => {
- 
-
   return (
-    <footer className="relative mt-20 py-12 px-6 bg-gradient-to-br from-primary/10 via-background/20 to-primary/5 border-t border-white/10 flex flex-col items-center gap-12 rounded-3xl shadow-xl backdrop-blur-lg">
+    <footer className="relative mt-24 px-6 py-14 rounded-3xl bg-gradient-to-br from-primary/20 via-background/30 to-primary/10 border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col items-center gap-12 overflow-hidden">
 
-      {/* Navigation Menu */}
-      <nav className="flex flex-wrap justify-center gap-6 text-sm sm:text-base text-muted-foreground font-medium">
-        <a href="#about" className="hover:text-primary transition-colors">About</a>
-        <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-        <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-        <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+      {/* Glow background */}
+      <div className="absolute -top-24 -left-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+
+      {/* Navigation */}
+      <nav className="relative z-10 flex flex-wrap justify-center gap-8 text-sm sm:text-base font-medium text-muted-foreground">
+        {["about", "projects", "skills", "contact"].map((item) => (
+          <a
+            key={item}
+            href={`#${item}`}
+            className="relative hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+          >
+            {item.charAt(0).toUpperCase() + item.slice(1)}
+          </a>
+        ))}
       </nav>
 
       {/* Social Icons */}
-      <div className="flex gap-6">
-        <a href="https://www.facebook.com/share/r/1EfzPyp3uy/?mibextid=wwXIfr" className="p-3 rounded-full bg-white/10 hover:bg-white/25 transition-all shadow-md text-white">
-          <Facebook size={22} />
+      <div className="relative z-10 flex gap-6">
+        <a
+          href="https://www.facebook.com/share/r/1EfzPyp3uy/?mibextid=wwXIfr"
+          target="_blank"
+          className="group p-3 rounded-full bg-white/10 hover:bg-primary/30 transition-all shadow-lg hover:scale-110"
+        >
+          <Facebook size={22} className="group-hover:text-primary transition-colors" />
         </a>
-        <a href="https://www.instagram.com/nethmalg?igsh=MWw3dzhzbTNndTB1dg%3D%3D&utm_source=qr" className="p-3 rounded-full bg-white/10 hover:bg-white/25 transition-all shadow-md text-white">
-          <Instagram size={22} />
+
+        <a
+          href="https://www.instagram.com/nethmalg?igsh=MWw3dzhzbTNndTB1dg%3D%3D&utm_source=qr"
+          target="_blank"
+          className="group p-3 rounded-full bg-white/10 hover:bg-primary/30 transition-all shadow-lg hover:scale-110"
+        >
+          <Instagram size={22} className="group-hover:text-primary transition-colors" />
         </a>
-        <a href="https://github.com/nethmalgeesaraux" className="p-3 rounded-full bg-white/10 hover:bg-white/25 transition-all shadow-md text-white">
-          <Github size={22} />
+
+        <a
+          href="https://github.com/nethmalgeesaraux"
+          target="_blank"
+          className="group p-3 rounded-full bg-white/10 hover:bg-primary/30 transition-all shadow-lg hover:scale-110"
+        >
+          <Github size={22} className="group-hover:text-primary transition-colors" />
         </a>
-        <a href="https://www.linkedin.com/in/nethmal-geesara-473962351/" className="p-3 rounded-full bg-white/10 hover:bg-white/25 transition-all shadow-md text-white">
-          <Linkedin size={22} />
+
+        <a
+          href="https://www.linkedin.com/in/nethmal-geesara-473962351/"
+          target="_blank"
+          className="group p-3 rounded-full bg-white/10 hover:bg-primary/30 transition-all shadow-lg hover:scale-110"
+        >
+          <Linkedin size={22} className="group-hover:text-primary transition-colors" />
         </a>
       </div>
 
+      {/* Divider */}
+      <div className="relative z-10 w-full max-w-md h-px bg-white/10" />
+
       {/* Copyright */}
-      <p className="text-center text-sm sm:text-base text-muted-foreground">
-        &copy; {new Date().getFullYear()} Nethmal— All rights reserved.
+      <p className="relative z-10 text-center text-sm sm:text-base text-muted-foreground">
+        © {new Date().getFullYear()}{" "}
+        <span className="text-primary font-medium">Nethmal</span> — All rights
+        reserved.
       </p>
 
       {/* Back to Top */}
       <a
         href="#hero"
-        className="absolute right-6 bottom-6 p-3 rounded-full bg-primary text-primary-foreground hover:scale-110 transition-transform shadow-lg flex items-center justify-center"
         aria-label="Back to Top"
+        className="absolute right-6 bottom-6 p-3 rounded-full bg-primary text-primary-foreground shadow-xl hover:scale-110 hover:rotate-12 transition-all"
       >
         <ArrowUp size={22} />
       </a>
-
     </footer>
   );
 };
