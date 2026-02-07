@@ -16,17 +16,48 @@ export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    const formData = new FormData(e.target);
+    formData.append(
+      "access_key",
+      "9ab1fee5-4ec9-44ca-8f5e-7452e497230e"
+    );
+    formData.append("subject", "New Contact Message 🚀");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        e.target.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: data.message || "Something went wrong",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Error sending message",
+        variant: "destructive",
+      });
+      console.error(error);
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -50,14 +81,14 @@ export const ContactSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6">
               {/* Email */}
               <div className="flex items-start space-x-4 p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/20 dark:bg-black/20 backdrop-blur-xl border border-white/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
-                <div className="p-2 md:p-3 rounded-full bg-primary/20 flex-shrink-0">
+                <div className="p-2 md:p-3 rounded-full bg-primary/20">
                   <Mail className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                 </div>
-                <div className="flex flex-col min-w-0">
-                  <h4 className="font-semibold text-foreground mb-1 text-sm md:text-base">Email</h4>
+                <div>
+                  <h4 className="font-semibold mb-1">Email</h4>
                   <a
                     href="mailto:nethmalgeesara098@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors text-xs md:text-sm break-all"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
                   >
                     nethmalgeesara098@gmail.com
                   </a>
@@ -66,127 +97,88 @@ export const ContactSection = () => {
 
               {/* Phone */}
               <div className="flex items-start space-x-4 p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/20 dark:bg-black/20 backdrop-blur-xl border border-white/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
-                <div className="p-2 md:p-3 rounded-full bg-primary/20 flex-shrink-0">
+                <div className="p-2 md:p-3 rounded-full bg-primary/20">
                   <Phone className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                 </div>
-                <div className="flex flex-col min-w-0">
-                  <h4 className="font-semibold text-foreground mb-1 text-sm md:text-base">Phone</h4>
-                  <a
-                    href="tel:+94768692919"
-                    className="text-muted-foreground hover:text-primary transition-colors text-xs md:text-sm"
-                  >
-                    +94 76 8692919
-                  </a>
-                  <a
-                    href="tel:+94704201344"
-                    className="text-muted-foreground hover:text-primary transition-colors text-xs md:text-sm"
-                  >
+                <div>
+                  <h4 className="font-semibold mb-1">Phone</h4>
+                  <p className="text-muted-foreground text-sm">
+                    +94 76 8692919 <br />
                     +94 70 4201344
-                  </a>
+                  </p>
                 </div>
               </div>
 
               {/* Location */}
-              <div className="flex items-start space-x-4 p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/20 dark:bg-black/20 backdrop-blur-xl border border-white/20 shadow-lg hover:scale-[1.02] transition-transform duration-300 sm:col-span-2 lg:col-span-1">
-                <div className="p-2 md:p-3 rounded-full bg-primary/20 flex-shrink-0">
+              <div className="flex items-start space-x-4 p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/20 dark:bg-black/20 backdrop-blur-xl border border-white/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                <div className="p-2 md:p-3 rounded-full bg-primary/20">
                   <MapPin className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                 </div>
-                <div className="flex flex-col min-w-0">
-                  <h4 className="font-semibold text-foreground mb-1 text-sm md:text-base">Location</h4>
-                  <p className="text-muted-foreground text-xs md:text-sm">
-                    Sri Lanka, Anuradapura, Kahatagasadigiliya
+                <div>
+                  <h4 className="font-semibold mb-1">Location</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Sri Lanka, Anuradhapura, Kahatagasdigiliya
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="pt-6 md:pt-8">
-              <h4 className="font-medium mb-4 text-center lg:text-left">Connect With Me</h4>
-              <div className="flex space-x-3 md:space-x-4 justify-center lg:justify-start">
-                <a
-                  href="https://www.linkedin.com/in/nethmal-geesara-473962351/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+            {/* Social */}
+            <div className="pt-6">
+              <h4 className="font-medium mb-4">Connect With Me</h4>
+              <div className="flex gap-4">
+                <a href="https://www.linkedin.com/in/nethmal-geesara-473962351/" target="_blank">
+                  <Linkedin className="text-primary" />
                 </a>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <a href="https://www.instagram.com/nethmalg/" target="_blank">
+                  <Instagram className="text-primary" />
                 </a>
-                <a
-                  href="https://www.instagram.com/nethmalg/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                </a>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 hover:bg-primary/20 transition-colors"
-                  aria-label="Twitch"
-                >
-                  <Twitch className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                </a>
+                <Twitter className="text-primary" />
+                <Twitch className="text-primary" />
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white/20 dark:bg-black/20 backdrop-blur-xl p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg">
-            <h3 className="text-xl md:text-2xl font-semibold mb-6">Send a Message</h3>
+            <h3 className="text-xl md:text-2xl font-semibold mb-6">
+              Send a Message
+            </h3>
+
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-2 md:py-3 rounded-lg md:rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
-                  placeholder="Pedro Machado..."
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:ring-2 focus:ring-primary"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label className="block text-sm font-medium mb-2">
                   Your Email
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-2 md:py-3 rounded-lg md:rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
-                  placeholder="john@gmail.com"
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:ring-2 focus:ring-primary"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label className="block text-sm font-medium mb-2">
                   Your Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
-                  required
                   rows={4}
-                  className="w-full px-4 py-2 md:py-3 rounded-lg md:rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none text-sm md:text-base"
-                  placeholder="Hello, I'd like to talk about..."
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
 
@@ -194,11 +186,11 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90 transition-all py-3 rounded-lg font-medium text-sm md:text-base"
+                  "w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={14} className="md:size-[16px]" />
+                <Send size={16} />
               </button>
             </form>
           </div>
