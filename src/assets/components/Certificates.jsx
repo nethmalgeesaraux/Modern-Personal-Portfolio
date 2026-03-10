@@ -19,10 +19,10 @@ const certificates = [
   },
   {
     id: 3,
-    title: "React Mastery",
-    description: "Certification for advanced React concepts.",
-    image: "/certificates/cert3.png",
-    tags: ["React", "Hooks"],
+    title: "AI for Business Growth and Innovation",
+    description: "Udemy certification focused on leveraging AI technologies to drive business growth and innovation.",
+    image: "/Certificates/3.png",
+    tags: ["AI", "Business", "ArtificialIntelligence", "Udemy"],
     demoUrl: "#",
   },
 ];
