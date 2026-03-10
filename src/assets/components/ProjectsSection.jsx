@@ -12,13 +12,13 @@ const projects = [
   },
   {
     id: 2,
-    title: "Clouthing Store",
+    title: "DropZone File Upload",
     description:
-      "An e-commerce clothing store with product listings and checkout.",
-    image: "/projects/project2.png",
-    tags: ["HTML", "Tailwindcss", "Javascript"],
-    demoUrl: "https://tinyurl.com/BEETA-FASHION",
-    githubUrl: "https://github.com/nethmalgeesaraux/BEETA-FASHION",
+      "A file upload web application with drag and drop functionality.",
+    image: "/projects/project8.png",
+    tags: ["React", "Node.js", "Vite", "MongoDB"],
+    demoUrl: "",
+    githubUrl: "https://github.com/nethmalgeesaraux/File-Sharing-App-Full-Stack-Project-Frontend-",
   },
   {
     id: 3,
@@ -32,19 +32,19 @@ const projects = [
   },
    {
     id: 4,
-    title: "Neumorphism Form Design",
+    title: "Pets-Store",
     description:
-      "A moden simple neumorphic styled form design.",
-    image: "/projects/project4.png",
-    tags: ["HtML", "CSS", "JavaScript"],
-    demoUrl: "https://696cb608a827ab5eaaaf1349--resilient-kleicha-03d5fe.netlify.app/",
-    githubUrl: "https://github.com/nethmalgeesaraux/Neumorphism-Form-",
+      "A modern simple neumorphic styled pets store design.",
+    image: "/projects/project9.png",
+    tags: ["React", "Tailwind CSS", "Vite"],
+    demoUrl: "",
+    githubUrl: "https://github.com/nethmalgeesaraux/Tail-Wag-My_pet_Site-",
   },
   {
     id: 5,
     title: "Flight-Booking-Landing-Page",
     description:
-      "A flight booking landing page design.",
+      "A modern simple neumorphic styled flight booking landing page design.",
     image: "/projects/project5.png",
     tags: ["HtML", "CSS", "JavaScript"],
     demoUrl: "https://nethmalgeesaraux.github.io/Flight-Booking-Landing-Page/",
@@ -52,13 +52,13 @@ const projects = [
   },
   {
     id: 6,
-    title: "tourly-master",
+    title: "Video-Calling-Interview",
     description:
-      "A travel agency landing page design.",
-    image: "/projects/project6.png",
-    tags: ["HtML", "CSS", "JavaScript"],
-    demoUrl: "https://nethmalgeesaraux.github.io/tourly-master/",
-    githubUrl: "https://github.com/nethmalgeesaraux/tourly-master",
+      "A live interview prep app that helps you prepare for interviews.",
+    image: "/projects/project7.png",
+    tags: ["Next.js", "Tailwind CSS", "Vite","Clerk"],
+    demoUrl: "",
+    githubUrl: "https://github.com/nethmalgeesaraux/Video-Calling-Interview",
   },
 
  
