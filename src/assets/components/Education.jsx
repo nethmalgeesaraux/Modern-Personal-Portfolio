@@ -19,15 +19,12 @@ const Education = () => {
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-center mb-14
-          text-purple-700 dark:text-cyan-400">
+        <h2 className="text-4xl font-bold text-center mb-14 text-primary">
           Education
         </h2>
 
         {/* Timeline */}
-        <div className="relative border-l-4
-          border-purple-500 dark:border-cyan-500
-          pl-8 space-y-10">
+        <div className="relative border-l-4 border-primary pl-8 space-y-10">
 
           {educationData.map((edu, index) => (
             <div
@@ -41,7 +38,7 @@ const Education = () => {
               {/* Timeline Dot */}
               <span
                 className="absolute -left-[14px] top-8 w-6 h-6
-                bg-purple-500 dark:bg-cyan-500
+                bg-primary
                 rounded-full border-4
                 border-white dark:border-gray-900"
               ></span>
@@ -51,8 +48,7 @@ const Education = () => {
                 {edu.degree}
               </h3>
 
-              <p className="text-lg font-medium
-                text-purple-600 dark:text-cyan-400 mb-1">
+              <p className="text-lg font-medium text-primary mb-1">
                 {edu.institution}
               </p>
 

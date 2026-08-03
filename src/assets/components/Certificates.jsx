@@ -57,7 +57,7 @@ export const Certificates = () => {
             >
 
               {/* Glow Border */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-transparent to-purple-500/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-transparent to-red-900/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
 
               {/* Certificate Image */}
               <div className="h-48 overflow-hidden rounded-xl shadow-inner">
